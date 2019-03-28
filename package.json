@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -42,8 +43,22 @@
     "rules": {
       "semi": [
         "error",
-        "never"
-      ]
+        "always"
+      ],
+      "semi-spacing": [
+        "error",
+        {
+          "after": true,
+          "before": false
+        }
+      ],
+      "semi-style": [
+        "error",
+        "last"
+      ],
+      "no-extra-semi": "error",
+      "no-unexpected-multiline": "error",
+      "no-unreachable": "error"
     },
     "parserOptions": {
       "parser": "babel-eslint"
