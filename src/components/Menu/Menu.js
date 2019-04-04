@@ -1,4 +1,4 @@
-import {mapState} from 'vuex';
+import { mapState } from 'vuex';
 
 import 'vue-awesome/icons/user-circle';
 import 'vue-awesome/icons/sign-out';
@@ -11,11 +11,11 @@ export default {
     ...mapState({
       user: state => state.auth.user,
       isAuthenticated: state => state.auth.isAuthenticated,
-    })
+    }),
   },
   methods: {
     signIn() {
       this.$store.dispatch('signIn');
-    }
-  }
+    },
+  },
 };

@@ -11,27 +11,21 @@ Vue.component('v-alert', Alert);
 export default {
   data() {
     return {
-      username: '',
-      code: '',
+      currentPassword: '',
+      newPassword: '',
     };
   },
   computed: {
     ...mapGetters('auth', ['hasAuthenticationStatus']),
   },
   methods: {
-    async confirmSignUp() {
-      await store.dispatch('auth/confirmSignUp', {
-        username: this.username,
-        code: this.code,
+    async completePassword() {
+      await store.dispatch('auth/completeNewPassword', {
+        newPassword: this.newPassword,
       });
       if (!this.hasAuthenticationStatus) {
-        router.push('signIn');
+        router.push('dashboard');
       }
-    },
-    async confirmResend() {
-      await store.dispatch('auth/confirmResend', {
-        username: this.username,
-      });
     },
   },
 };

@@ -1,39 +1,39 @@
-import Vue from "vue";
+import Vue from 'vue';
 
-import {mapGetters} from "vuex";
-import router from "@/router";
-import store from "@/store";
+import { mapGetters } from 'vuex';
+import router from '@/router';
+import store from '@/store';
 
-import Alert from "@/components/auth/Alert";
+import Alert from '@/components/auth/Alert';
 
-Vue.component("v-alert", Alert);
+Vue.component('v-alert', Alert);
 
 export default {
   data() {
     return {
-      username: "",
-      code: "",
-      password: "",
+      username: '',
+      code: '',
+      password: '',
     };
   },
   computed: {
-    ...mapGetters("auth", ["hasAuthenticationStatus"])
+    ...mapGetters('auth', ['hasAuthenticationStatus']),
   },
   methods: {
     async confirmPasswordReset() {
-      await store.dispatch("auth/confirmPasswordReset", {
+      await store.dispatch('auth/confirmPasswordReset', {
         username: this.username,
         code: this.code,
         password: this.password,
       });
       if (!this.hasAuthenticationStatus) {
-        router.push("signIn");
+        router.push('signIn');
       }
     },
     async passwordResetResend() {
-      await store.dispatch("auth/passwordReset", {
-        username: this.username
+      await store.dispatch('auth/passwordReset', {
+        username: this.username,
       });
-    }
-  }
+    },
+  },
 };

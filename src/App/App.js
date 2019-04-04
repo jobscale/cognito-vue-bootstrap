@@ -6,5 +6,5 @@ Vue.component('v-menu', Menu);
 Vue.component('v-footer', Footer);
 
 export default {
-  name: 'App'
+  name: 'App',
 };

@@ -28,6 +28,8 @@
     "@vue/test-utils": "^1.0.0-beta.16",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "vue-template-compiler": "^2.5.16"
   },
   "eslintConfig": {
@@ -38,9 +40,27 @@
     "extends": [
       "plugin:vue/essential",
       "plugin:vue/strongly-recommended",
-      "eslint:recommended"
+      "eslint:recommended",
+      "airbnb-base"
     ],
     "rules": {
+      "indent": [
+        "error",
+        2,
+        {
+          "MemberExpression": 0
+        }
+      ],
+      "arrow-parens": "off",
+      "no-return-assign": "off",
+      "no-param-reassign": "off",
+      "no-shadow": "off",
+      "no-plusplus": "off",
+      "no-confusing-arrow": "off",
+      "class-methods-use-this": "off",
+      "import/no-unresolved": "off",
+      "no-await-in-loop": "off",
+      "lines-between-class-members": "off",
       "semi": [
         "error",
         "always"

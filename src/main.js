@@ -4,7 +4,7 @@ import Icon from 'vue-awesome/components/Icon';
 import App from '@/App';
 import router from '@/router';
 import store from '@/store';
-import Auth from "@aws-amplify/auth";
+import Auth from '@aws-amplify/auth';
 import AuthConfig from '@/aws-exports';
 
 Auth.configure(AuthConfig);
@@ -14,9 +14,9 @@ Vue.component('icon', Icon);
 
 Vue.config.productionTip = false;
 
-new Vue({
+(() => new Vue({
   router,
   store,
   el: '#app',
   render: h => h(App),
-});
+}))();

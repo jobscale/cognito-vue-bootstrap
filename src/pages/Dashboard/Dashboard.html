@@ -1,6 +1,8 @@
 <b-container>
   <div class="b-main-content">
     <h2>Cognito Bootstrap Vue</h2>
-    <p>You are logged in as {{ user.username }}.</p>
+    <p>You are logged in as {{ user && user.username }}.</p>
   </div>
+  <div @click="invoke">INVOKE</div>
+  <div @click="invoke2">INVOKE2</div>
 </b-container>

@@ -23,3 +23,5 @@ yarn-error.log*
 # Don't commit your aws mobile configuration file
 /src/aws-exports.js
 .envrc
+package-lock.json
+logs
